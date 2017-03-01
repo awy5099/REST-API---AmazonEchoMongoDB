@@ -1,5 +1,5 @@
 {
-  "name": "capitalone-rest-api",
+  "name": "psu-capitalone-api",
   "main": "server.js",
   "dependencies": {
     "body-parser": "~1.0.1",
