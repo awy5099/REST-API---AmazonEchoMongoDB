@@ -1,6 +1,6 @@
 {
     //"prodDB": "mongodb://test:test123@ds053136.mlab.com:53136/psu-capitalone",
     //"testDB": "mongodb://test:test123@ds053176.mlab.com:53176/test_psucapitalone",
-    "testDB": "mongodb://vjoseph1418:mlab1234@ds111940.mlab.com:11940/capitalone",
+    "testDB": "mongodb://capitalone:mlab1234@ds111940.mlab.com:11940/capitalone",
     "testPort": 8080
 }
