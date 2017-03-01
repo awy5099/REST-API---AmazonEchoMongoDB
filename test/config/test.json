@@ -1,3 +1,4 @@
 {
-    "DBHost": "mongodb://test:test123@ds053176.mlab.com:53176/test_psucapitalone"  
+    //"DBHost": "mongodb://test:test123@ds053176.mlab.com:53176/test_psucapitalone"  
+    "DBHost": "mongodb://vjoseph1418:mlab1234@ds111940.mlab.com:11940/capitalone"
 }
