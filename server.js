@@ -45,7 +45,7 @@ mongoose.connect(config.DBHost, function(err, database){
     });
 });
 router.route("/").get(function(req, res) {
-    res.json({ message: "capital one rest api" });   
+    res.json({ message: "capital one rest api (SP17)" });   
 });
 
 router.route("/customers")
