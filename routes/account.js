@@ -61,20 +61,29 @@ function postAccount(req, res){
                                 res.json(response);
                             }
                             else{
-                                Account.find({customer_id: req.params.id}, function(err, account){ 
+                                Account.find({customer_id: req.params.id}, function(err, accounts){ 
                                     var response; 
                                     if (err){
                                         response = { error: "error when trying to get account"};
                                         res.json(response);
                                     }
                                     else{
-                                        if (account.length != 0){
+                                        /*if (accounts.length != 0){
                                             response = { error: "this customer already has an account!"};
                                             res.json(response);
-                                        }
+                                        }*/ //--- allowed to have multiple accounts now
                                         else{
                                             var newAccount = new Account(req.body);
-                                            newAccount.customer_id = req.params.id;
+                                            for (var i = 0; i < accounts.length; i++) { // if account with this nickname already exists
+                                        		if (accounts[i].nickname == newAccount.nickname) {
+                                        			response = {error: "This customer already has an account under this nickname!"};
+                                            		res.json(response);
+                                            		return;
+                                        		}
+                                        	}
+                                        	// if we made it to this point, an account with the desired nickname does not
+                                        	// already exist, so we can make one, under the same customer id
+                                            newAccount.customer_id = req.params.id; // redundant?
                                             newAccount.save(function(err1, account1){
                                                 var response; 
                                                 if (err1){
