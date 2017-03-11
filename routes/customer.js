@@ -40,7 +40,7 @@ function postCustomer(req, res){
 
 function getCustomer(req, res){
     Customer.find({_id: req.params.id}, function(err, customer){ 
-        var response; 
+        var response = null;
         if (err){
             response = { error: "could not get customer"};
             res.json(response);
