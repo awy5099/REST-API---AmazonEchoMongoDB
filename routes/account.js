@@ -119,19 +119,20 @@ function getCustomerAccounts(req, res){
                 res.json(response);
             }
             else{
-                Account.find({customer_id: req.params.id}, function(err1, account){ 
+                Account.find({customer_id: req.params.id}, function(err1, accounts){ 
                     var response; 
                     if (err1){
-                        response = { error: "could not get account"};
+                        response = { error: "could not get accounts"};
                         res.json(response);
                     }
                     else{
-                        if (account.length == 0){
-                            response = { error: "account does not exist"};
+                        if (accounts.length == 0){
+                            response = { error: "accounts do not exist"};
                             res.json(response);
                         }
                         else{
-                            response = account[0]; 
+                            //response = account[0]; 
+                            response = accounts; // may be > 1
                             res.json(response);
                         }
                     }
