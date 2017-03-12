@@ -7,7 +7,7 @@ function postTransfer(req, res){
     var newTransfer = new Transfer(req.body);
     newTransfer.validate(function(error){
             if (error){
-                response = req.body;
+                response = { error: "incorrectly formatted transfer"};
                 res.json(response);
             }
             else{

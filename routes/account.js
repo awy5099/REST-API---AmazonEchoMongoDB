@@ -108,7 +108,7 @@ function postAccount(req, res){
 
 function getCustomerAccounts(req, res){
     Customer.find({_id: req.params.id}, function(err, customer){ 
-        var response; 
+        var response = []; 
         if (err){
             response = { error: "could not find customer"};
             res.json(response);
