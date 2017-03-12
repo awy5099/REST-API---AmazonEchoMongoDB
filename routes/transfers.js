@@ -6,8 +6,9 @@ function postTransfer(req, res){
     req.body.sender = req.params.id; 
     var newTransfer = new Transfer(req.body);
     newTransfer.validate(function(error){
-            if (error){
-                response = { error: "incorrectly formatted transfer"};
+            if (error != null){
+                //response = { error: "incorrectly formatted transfer"};
+                response = error;
                 res.json(response);
             }
             else{
