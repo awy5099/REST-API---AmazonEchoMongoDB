@@ -5,10 +5,10 @@ var Account = require("../model/account");
 function postTransfer(req, res){
     req.body.sender = req.params.id; 
     var newTransfer = new Transfer(req.body);
+    console.log("req.body: " + req.body);
     newTransfer.validate(function(error){
-            if (error != null){
-                //response = { error: "incorrectly formatted transfer"};
-                response = error;
+            if (error){
+                response = { error: "incorrectly formatted transfer"};
                 res.json(response);
             }
             else{
